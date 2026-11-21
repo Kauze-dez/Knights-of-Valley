@@ -2868,7 +2868,7 @@ function cloudPush(force) {
   d.set({ json: G.lastSaved, ts: now }).catch(function () { Cloud.last = ''; });
 }
 /* ===== Аккаунты (Supabase Auth): Google, Email, восстановление пароля, облачное сохранение ===== */
-var SUPA = { url:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4bXlrcGR4a3pvY2JneW1waHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyOTQzNTMsImV4cCI6MjExMDg3MDM1M30._e2DkSAkfTpz7mBFWgaxNZm50TWIhFD7nJ6h3KsM4xk '', key: '' }; /* ← вставьте Project URL и anon public key вашего проекта Supabase (см. README) */
+var SUPA = { url:https://gxmykpdxkzocbgymphto.supabase.coeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4bXlrcGR4a3pvY2JneW1waHRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyOTQzNTMsImV4cCI6MjExMDg3MDM1M30._e2DkSAkfTpz7mBFWgaxNZm50TWIhFD7nJ6h3KsM4xk '', key: '' }; /* ← вставьте Project URL и anon public key вашего проекта Supabase (см. README) */
 var Auth = { sb: null, booting: false, recovery: false, autoEnter: false, fromLink: /access_token=|type=(signup|recovery|magiclink|email)|error_description=/.test(location.hash), linkErr: /error_description=/.test(location.hash) };
 try { if (sessionStorage.getItem('vk-enter')) { Auth.autoEnter = true; sessionStorage.removeItem('vk-enter'); } } catch (e) {}
 function authReady() { return !!(SUPA.url && SUPA.key && window.supabase && window.supabase.createClient); }
